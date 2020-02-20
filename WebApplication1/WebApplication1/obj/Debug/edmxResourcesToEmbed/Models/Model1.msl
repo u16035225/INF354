@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ELCSAModelStoreContainer" CdmEntityContainer="ELCSAEntities">
+    <EntitySetMapping Name="Congregants">
+      <EntityTypeMapping TypeName="ELCSAModel.Congregant">
+        <MappingFragment StoreEntitySet="Congregant">
+          <ScalarProperty Name="RegisterNo" ColumnName="RegisterNo" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Parish" ColumnName="Parish" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Parish2_0">
+      <EntityTypeMapping TypeName="ELCSAModel.Parish2_0">
+        <MappingFragment StoreEntitySet="Parish2_0">
+          <ScalarProperty Name="RegisterID" ColumnName="RegisterID" />
+          <ScalarProperty Name="PastorID" ColumnName="PastorID" />
+          <ScalarProperty Name="CongregantID" ColumnName="CongregantID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pastors">
+      <EntityTypeMapping TypeName="ELCSAModel.Pastor">
+        <MappingFragment StoreEntitySet="Pastor">
+          <ScalarProperty Name="RegisterNo" ColumnName="RegisterNo" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Parish" ColumnName="Parish" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="ELCSAModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

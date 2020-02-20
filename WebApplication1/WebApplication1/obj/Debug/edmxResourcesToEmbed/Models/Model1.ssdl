@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ELCSAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Congregant">
+    <Key>
+      <PropertyRef Name="RegisterNo" />
+    </Key>
+    <Property Name="RegisterNo" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Surname" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Parish" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Parish2_0">
+    <Key>
+      <PropertyRef Name="RegisterID" />
+    </Key>
+    <Property Name="RegisterID" Type="int" Nullable="false" />
+    <Property Name="PastorID" Type="int" Nullable="false" />
+    <Property Name="CongregantID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pastor">
+    <Key>
+      <PropertyRef Name="RegisterNo" />
+    </Key>
+    <Property Name="RegisterNo" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Surname" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Parish" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_Parish2_0_Congregant">
+    <End Role="Congregant" Type="Self.Congregant" Multiplicity="1" />
+    <End Role="Parish2_0" Type="Self.Parish2_0" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Congregant">
+        <PropertyRef Name="RegisterNo" />
+      </Principal>
+      <Dependent Role="Parish2_0">
+        <PropertyRef Name="CongregantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Parish2_0_Pastor">
+    <End Role="Pastor" Type="Self.Pastor" Multiplicity="1" />
+    <End Role="Parish2_0" Type="Self.Parish2_0" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pastor">
+        <PropertyRef Name="RegisterNo" />
+      </Principal>
+      <Dependent Role="Parish2_0">
+        <PropertyRef Name="PastorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ELCSAModelStoreContainer">
+    <EntitySet Name="Congregant" EntityType="Self.Congregant" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Parish2_0" EntityType="Self.Parish2_0" Schema="dbo" Table="Parish2.0" store:Type="Tables" />
+    <EntitySet Name="Pastor" EntityType="Self.Pastor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Parish2_0_Congregant" Association="Self.FK_Parish2_0_Congregant">
+      <End Role="Congregant" EntitySet="Congregant" />
+      <End Role="Parish2_0" EntitySet="Parish2_0" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Parish2_0_Pastor" Association="Self.FK_Parish2_0_Pastor">
+      <End Role="Pastor" EntitySet="Pastor" />
+      <End Role="Parish2_0" EntitySet="Parish2_0" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
