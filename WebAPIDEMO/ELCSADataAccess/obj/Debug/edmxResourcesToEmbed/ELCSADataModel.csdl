@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ELCSAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Congregant">
+    <Key>
+      <PropertyRef Name="Congregant_ID" />
+    </Key>
+    <Property Name="Congregant_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Con_Name" Type="String" MaxLength="50" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Con_Surname" Type="String" MaxLength="50" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Con_Phone_Number" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="Con_Ward" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Con_Age" Type="Int32" />
+    <Property Name="Parish_ID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="emp_ID" />
+    </Key>
+    <Property Name="emp_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Position" Type="String" MaxLength="50" FixedLength="true" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OfficeWorker">
+    <Key>
+      <PropertyRef Name="emp_ID" />
+    </Key>
+    <Property Name="emp_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Phone_Number" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="ID_Number" Type="String" MaxLength="13" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Parish">
+    <Key>
+      <PropertyRef Name="Parish_ID" />
+    </Key>
+    <Property Name="Parish_ID" Type="Int32" Nullable="false" />
+    <Property Name="Parish_Name" Type="String" MaxLength="50" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Parish_Pastor" Type="String" MaxLength="50" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Parish_Address" Type="String" MaxLength="50" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Pasrish_Cell" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="Congregant_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pastor">
+    <Key>
+      <PropertyRef Name="emp_ID" />
+    </Key>
+    <Property Name="emp_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="P_Name" Type="String" MaxLength="50" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="P_Surname" Type="String" MaxLength="50" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="P_PhoneNumber" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="P_ID_Number" Type="String" MaxLength="13" FixedLength="true" Unicode="false" />
+    <Property Name="Parish_ID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityContainer Name="ELCSAEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Congregants" EntityType="Self.Congregant" />
+    <EntitySet Name="Employees" EntityType="Self.Employee" />
+    <EntitySet Name="OfficeWorkers" EntityType="Self.OfficeWorker" />
+    <EntitySet Name="Parishes" EntityType="Self.Parish" />
+    <EntitySet Name="Pastors" EntityType="Self.Pastor" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+  </EntityContainer>
+</Schema>

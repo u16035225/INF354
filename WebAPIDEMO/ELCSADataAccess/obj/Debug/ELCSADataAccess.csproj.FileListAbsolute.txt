@@ -1,0 +1,9 @@
+c:\users\u16035225\documents\visual studio 2015\Projects\WebAPIDEMO\ELCSADataAccess\bin\Debug\ELCSADataAccess.dll.config
+c:\users\u16035225\documents\visual studio 2015\Projects\WebAPIDEMO\ELCSADataAccess\bin\Debug\ELCSADataAccess.dll
+c:\users\u16035225\documents\visual studio 2015\Projects\WebAPIDEMO\ELCSADataAccess\bin\Debug\ELCSADataAccess.pdb
+c:\users\u16035225\documents\visual studio 2015\Projects\WebAPIDEMO\ELCSADataAccess\bin\Debug\EntityFramework.dll
+c:\users\u16035225\documents\visual studio 2015\Projects\WebAPIDEMO\ELCSADataAccess\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\u16035225\documents\visual studio 2015\Projects\WebAPIDEMO\ELCSADataAccess\bin\Debug\EntityFramework.xml
+c:\users\u16035225\documents\visual studio 2015\Projects\WebAPIDEMO\ELCSADataAccess\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\u16035225\documents\visual studio 2015\Projects\WebAPIDEMO\ELCSADataAccess\obj\Debug\ELCSADataAccess.dll
+c:\users\u16035225\documents\visual studio 2015\Projects\WebAPIDEMO\ELCSADataAccess\obj\Debug\ELCSADataAccess.pdb

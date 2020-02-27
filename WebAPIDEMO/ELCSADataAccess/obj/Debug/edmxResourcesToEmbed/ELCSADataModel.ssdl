@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ELCSAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Congregant">
+    <Key>
+      <PropertyRef Name="Congregant_ID" />
+    </Key>
+    <Property Name="Congregant_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Con_Name" Type="char" MaxLength="50" Nullable="false" />
+    <Property Name="Con_Surname" Type="char" MaxLength="50" Nullable="false" />
+    <Property Name="Con_Phone_Number" Type="char" MaxLength="10" />
+    <Property Name="Con_Ward" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="Con_Age" Type="int" />
+    <Property Name="Parish_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="emp_ID" />
+    </Key>
+    <Property Name="emp_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Position" Type="char" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OfficeWorkers">
+    <Key>
+      <PropertyRef Name="emp_ID" />
+    </Key>
+    <Property Name="emp_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="char" MaxLength="50" Nullable="false" />
+    <Property Name="Surname" Type="char" MaxLength="50" Nullable="false" />
+    <Property Name="Phone Number" Type="char" MaxLength="10" />
+    <Property Name="ID_Number" Type="char" MaxLength="13" />
+  </EntityType>
+  <EntityType Name="Parish">
+    <Key>
+      <PropertyRef Name="Parish_ID" />
+    </Key>
+    <Property Name="Parish_ID" Type="int" Nullable="false" />
+    <Property Name="Parish_Name" Type="char" MaxLength="50" Nullable="false" />
+    <Property Name="Parish_Pastor" Type="char" MaxLength="50" Nullable="false" />
+    <Property Name="Parish_Address" Type="char" MaxLength="50" Nullable="false" />
+    <Property Name="Pasrish_Cell" Type="char" MaxLength="10" />
+    <Property Name="Congregant_ID" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pastor">
+    <Key>
+      <PropertyRef Name="emp_ID" />
+    </Key>
+    <Property Name="emp_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="P_Name" Type="char" MaxLength="50" Nullable="false" />
+    <Property Name="P_Surname" Type="char" MaxLength="50" Nullable="false" />
+    <Property Name="P_PhoneNumber" Type="char" MaxLength="10" />
+    <Property Name="P_ID_Number" Type="char" MaxLength="13" />
+    <Property Name="Parish_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityContainer Name="ELCSAModelStoreContainer">
+    <EntitySet Name="Congregant" EntityType="Self.Congregant" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OfficeWorkers" EntityType="Self.OfficeWorkers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Parish" EntityType="Self.Parish" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pastor" EntityType="Self.Pastor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
